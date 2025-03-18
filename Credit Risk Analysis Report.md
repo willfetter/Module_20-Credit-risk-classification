@@ -6,7 +6,7 @@ The purpose of this analysis was to use various techniques to train and evaluate
 
 The starter financial data was located within a "lending_data.csv" file and contained the loan status which was either "0" for a healthy loan or "1" for a high-risk loan. The variables we were trying to predict with the models were how many loans are predicted to be healthy and high-risk, versus how many actually are healthy and high-risk. 
 
-The model is built using the dependent variable "y" is loan status, while the independent variable "x" represents all other data including loan size, interest rate, borrower income, debt to income ratio, number of accounts, derrogotory marks, and total debt. 
+The model is built using the dependent variable "y" as loan status, while the independent variable "x" represents all other data including loan size, interest rate, borrower income, debt to income ratio, number of accounts, derrogotory marks, and total debt. 
 
 The steps of the machine learning process included:
 #### Split the Data into Training and Testing Sets
@@ -32,6 +32,8 @@ The results of the analysis are displayed within the output accuracy score, conf
 #### Balanced Accuracy Score
 0.967989851522121
 
+The balanced accuracy score of 0.97 for the original data suggests that the model is able to accurately classify obervations. 
+
 #### Confusion Matrix
 array([[18655,   110],
        [   36,   583]])
@@ -48,13 +50,13 @@ The original data shows 18,655 healthy loans predicted and 583 unhealthy loans p
    macro avg       0.92      0.97      0.94     19384
 weighted avg       0.99      0.99      0.99     19384
 
-The original data shows a high rate of predicting low-risk loans (recall value = 1.00) than high-risk loans (recall value = 0.89). The model  does predicts unhealthy loans with 84% accuracy and predicts healty loan values  with 100% accuracy.
-
-
+The original data shows a high rate of predicting low-risk loans (recall value = 0.99) than high-risk loans (recall value = 0.94). The model  does predicts unhealthy loans with 84% accuracy and predicts healty loan values  with 100% accuracy.
 
 ### Machine Learning Model #2 (Re-Sampled Data)
 #### Balanced Accuracy Score
 0.9935981855334257
+
+The balanced accuracy score of 0.99 for the re-sampled data suggests that the re-sampled model is able to very accurately classify obervations. 
 
 #### Confusion Matrix
 array([[18646,   119],
@@ -75,9 +77,5 @@ weighted avg       0.99      0.99      0.99     19384
 The re-sampled data shows a very high rate of predicting both low-risk loans (recall value = 0.99) and high-risk loans (recall value = 0.99). The re-sampled model still predicts unhealthy loans with 84% accuracy and predicts healty loan values  with 100% accuracy.
 
 ## Summary
+Based on the analysis results of the two learning models, the re-sampled (second) model is best for use. The re-sampled model has improved recall values (94% original vs 99% re-sampled) indicating improved high-risk loan prediction rates as well as a significantly smaller amount of false positives identified (36 original vs 4 re-sampled). This model therefore would be extremly useful in predictions loans that could default, and would be therefule useful and reliable for the bank to avoid such high-risk loans.
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
