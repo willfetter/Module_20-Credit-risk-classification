@@ -30,43 +30,49 @@ The results of the analysis are displayed within the output accuracy score, conf
 
 ### Machine Learning Model #1 (Original Data)
 #### Balanced Accuracy Score
-![Original-Accuracy_Score](https://github.com/user-attachments/assets/a04402fd-4acd-4a76-bb91-fffa5ceda1fb)
-
-
+0.967989851522121
 
 #### Confusion Matrix
+array([[18655,   110],
+       [   36,   583]])
+
+The original data shows 18,655 healthy loans predicted and 583 unhealthy loans predicted. False positives predicted = 110 and false negatives predicted = 36.
+
 #### Classification Matrix
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00     18765
+           1       0.84      0.94      0.89       619
+
+    accuracy                           0.99     19384
+   macro avg       0.92      0.97      0.94     19384
+weighted avg       0.99      0.99      0.99     19384
+
+The original data shows a high rate of predicting low-risk loans (recall value = 1.00) than high-risk loans (recall value = 0.89). The model  does predicts unhealthy loans with 84% accuracy and predicts healty loan values  with 100% accuracy.
+
+
 
 ### Machine Learning Model #2 (Re-Sampled Data)
 #### Balanced Accuracy Score
+0.9935981855334257
+
 #### Confusion Matrix
+array([[18646,   119],
+       [    4,   615]])
+
+The re-sampled data shows 18,646 healthy loans predicted and 615 unhealthy loans predicted. False positives predicted = 119 and false negatives predicted = 4.
+
 #### Classification Matrix
+              precision    recall  f1-score   support
 
+           0       1.00      0.99      1.00     18765
+           1       0.84      0.99      0.91       619
 
-The target variable "y", was used to represent the loan status, and the variable "x" was used to reppresent all other data. 
- 
+    accuracy                           0.99     19384
+   macro avg       0.92      0.99      0.95     19384
+weighted avg       0.99      0.99      0.99     19384
 
-
-
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
-
-## Results
-
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
-
-
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+The re-sampled data shows a very high rate of predicting both low-risk loans (recall value = 0.99) and high-risk loans (recall value = 0.99). The re-sampled model still predicts unhealthy loans with 84% accuracy and predicts healty loan values  with 100% accuracy.
 
 ## Summary
 
